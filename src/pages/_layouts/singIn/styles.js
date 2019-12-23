@@ -20,8 +20,10 @@ export const Content = styled.div`
     margin: 50px auto 20px;
   }
   h1 {
+    margin: 0 0 10px 30px;
+    text-align:left;
     font-size: 14px;
-    color: #ee4d64;
+    color: #444444;
     margin-top: 30px;
   }
   input {
@@ -29,7 +31,7 @@ export const Content = styled.div`
     height: 45px;
     border-radius: 4px;
     border-width: 1px;
-    border: 1;
+    border: 1px solid #DDDDDD;
     &::placeholder {
       padding: 15px 0 15px 5px;
     }

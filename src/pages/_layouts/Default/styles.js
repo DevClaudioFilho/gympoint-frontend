@@ -16,16 +16,11 @@ export const Wrapper = styled.div`
       font-weight: bold;
     }
     button {
+
     }
   }
   form {
-    background: #fff;
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
-    input {
-      width: 100%;
-      display: flex;
-    }
+  
   }
+
 `;
