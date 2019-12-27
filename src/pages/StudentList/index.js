@@ -9,10 +9,9 @@ import { Container, Title , Table } from './styles';
 export default function StudentList() {
   const [students, setStudents] = useState([]);
 
-
   useEffect(()=>{
     async function getStudents(){
-      const response = await api.get('/students')
+      const response = await api.get('/students');
       setStudents(response.data)
     }
     getStudents();
@@ -25,8 +24,6 @@ export default function StudentList() {
     setStudents(response)
     }
 
-
-
   return (
     <Container>
       <Title>
@@ -37,6 +34,8 @@ export default function StudentList() {
           id="search-input"
           type="text" 
           placeholder="Buscar aluno"
+          onChange={e =>
+           e.target.value}
           />
         </div>
       </Title>

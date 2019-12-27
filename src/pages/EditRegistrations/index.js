@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom'
 
 import Form, { Container, Title,InfosBoby,InputContainer } from './styles';
 
-export default function CreateStudent() {
+export default function EditRegistrations() {
   const [students, setStudents] = useState([]);
 
   useEffect(()=>{

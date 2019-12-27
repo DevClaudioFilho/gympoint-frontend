@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom'
 
 import Form, { Container, Title,InfosBoby,InputContainer } from './styles';
 
-export default function CreateStudent() {
+export default function CreateRegistration() {
   const [students, setStudents] = useState([]);
 
   useEffect(()=>{
@@ -17,40 +17,27 @@ export default function CreateStudent() {
   },[]);
 
   async function handleSubmit(data){
-    await api.put(`students/${students.id}`, data);
+    console.log(data)
+    await api.post('/students', data);
   }
-
-  const student = students.find(e => e.id ===25)
-  console.log(student)
-  
 
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
       <Title>
-        <h1>Edição de aluno</h1>
+        <h1>Cadastro de Matricula</h1>
         <div>
           <Link to='/studentslist'><button>VOLTAR</button></Link>
           <button type="submit">SALVAR</button>
         </div>
       </Title>  
       <InputContainer>
-          <Input name="name" label="Nome Completo" placeholder={`${students.name}`} />
-          <Input name="email" label="E-mail" placeholder={`${students.email}`} />
+          <Input name="" label="ALUNO" placeholder="Claudio Martins Pinho" />
           <InfosBoby>
-            <Input 
-            type="number" 
-            name="age" 
-            label="Idade"  
-            placeholder={`${students.age}`} 
-            defaultValue="ola"/>
-            <Input 
-            type="interger" 
-            name="weight" 
-            label="Peso (em kg)" 
-            placeholder={`${students.weight}`} 
-            defaultValue="ola" />
-            <Input type="interger" name="height" label="Altura" placeholder={`${students.height}`} />
+            <Input type="text" name="" label="PLANO"/>  
+            <Input type="date" name="start_date" label="DATA DE INÍCIO"/>
+            <Input type="date" name="end_date" label="DATA DE TERMINO" />
+            <Input type="number" name="price" label="VALOR TOTAL" />
           </InfosBoby>
       </InputContainer>
       </Form>
